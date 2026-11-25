@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0f172a">
+  <title>Admin Panel — GameZone</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="admin-page">
+  <header class="site-header">
+    <div class="container header-content">
+      <a class="brand" href="index.html"><span class="brand-mark">G</span>GameZone <span class="brand-subtitle">ADMIN</span></a>
+      <a class="admin-link" href="index.html">← View website</a>
+    </div>
+  </header>
+  <main class="container admin-container">
+    <section id="login-panel" class="login-card">
+      <div class="admin-icon">⌘</div>
+      <span class="eyebrow">RESTRICTED AREA</span>
+      <h1>Admin sign in</h1>
+      <p>Enter your password to manage the game catalog.</p>
+      <form id="login-form">
+        <label for="admin-password">Password</label>
+        <input id="admin-password" type="password" autocomplete="current-password" required>
+        <button class="button button-primary button-wide" type="submit">Sign in</button>
+        <p id="login-error" class="form-error" role="alert" hidden>Incorrect password. Please try again.</p>
+      </form>
+    </section>
+
+    <section id="admin-panel" hidden>
+      <div class="admin-heading">
+        <div><span class="eyebrow">CATALOG MANAGEMENT</span><h1>Game dashboard</h1></div>
+        <button id="logout-button" class="button button-secondary" type="button">Sign out</button>
+      </div>
+      <p class="admin-security-note">This static admin page is protected only in your browser. Do not use it to manage sensitive data.</p>
+      <section class="admin-card">
+        <h2>Add a game</h2>
+        <p class="form-intro">Fields marked with * are required.</p>
+        <form id="game-form" class="admin-form">
+          <label>Game Name *<input name="name" type="text" maxlength="80" required></label>
+          <label>Game Logo Image URL<input name="logo" type="url" placeholder="https://example.com/logo.png"></label>
+          <label>Banner Image URL<input name="banner" type="url" placeholder="https://example.com/banner.jpg"></label>
+          <label>Category
+            <select name="category">
+              <option>Rummy</option><option>Teen Patti</option><option>Ludo</option>
+              <option>Slots</option><option>Spin</option><option>Poker</option>
+            </select>
+          </label>
+          <label>Welcome Bonus<input name="bonus" type="text" maxlength="80" placeholder="e.g. 100% welcome bonus"></label>
+          <label>App Size<input name="size" type="text" maxlength="30" placeholder="e.g. 48 MB"></label>
+          <label>App Version<input name="version" type="text" maxlength="30" placeholder="e.g. 2.4.1"></label>
+          <label>Download Count<input name="downloads" type="number" min="0" step="1" value="0"></label>
+          <label class="form-span-two">Short Description<textarea name="shortDescription" rows="2" maxlength="180"></textarea></label>
+          <label class="form-span-two">Full Description<textarea name="description" rows="5"></textarea></label>
+          <label class="form-span-two">Official Download Link *<input name="downloadLink" type="url" placeholder="https://example.com/download" required></label>
+          <label>Status
+            <select name="status"><option>Active</option><option>Inactive</option></select>
+          </label>
+          <label class="checkbox-label"><input name="featured" type="checkbox"> Featured Game</label>
+          <div class="form-span-two form-actions">
+            <p id="form-message" class="form-message" role="status" hidden></p>
+            <button class="button button-primary" type="submit">Add Game</button>
+          </div>
+        </form>
+      </section>
+      <section class="admin-card game-management">
+        <div class="section-heading"><div><span class="eyebrow">LOCAL CATALOG</span><h2>Manage games</h2></div><span id="admin-game-count" class="game-count"></span></div>
+        <p id="admin-storage-error" class="notice notice-error" role="alert" hidden></p>
+        <div id="admin-game-list" class="admin-game-list"></div>
+        <p id="admin-empty" class="empty-state" hidden>No games have been added yet.</p>
+      </section>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-content"><small>&copy; <span id="current-year"></span> GameZone. All rights reserved.</small></div>
+  </footer>
+  <script src="js/admin.js"></script>
+</body>
+</html>
