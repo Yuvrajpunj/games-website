@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0f172a">
+  <meta name="description" content="Discover and download games on GameZone.">
+  <title>GameZone — Download Latest Games</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-content">
+      <a class="brand" href="index.html" aria-label="GameZone home"><span class="brand-mark">G</span>GameZone</a>
+      <label class="search-wrap">
+        <span class="sr-only">Search games</span>
+        <span class="search-icon" aria-hidden="true">⌕</span>
+        <input id="game-search" type="search" placeholder="Search games..." autocomplete="off">
+      </label>
+      <a class="admin-link" href="admin.html">Admin <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <div class="hero-copy">
+        <span class="eyebrow"><span class="status-dot"></span> YOUR NEXT FAVORITE GAME</span>
+        <h1>Download Latest<br><span>Games</span></h1>
+        <p>Find your next way to play. Explore hand-picked games, exclusive bonuses, and the latest releases.</p>
+        <a class="button button-primary hero-button" href="#all-games">Explore games <span aria-hidden="true">↓</span></a>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="hero-orbit orbit-one"></div>
+        <div class="hero-orbit orbit-two"></div>
+        <div class="hero-game-icon">🎮</div>
+        <span class="floating-chip chip-one">✦</span>
+        <span class="floating-chip chip-two">✧</span>
+      </div>
+    </section>
+
+    <section class="container catalog">
+      <div class="section-heading filter-heading">
+        <div>
+          <span class="eyebrow">PICK YOUR PLAYSTYLE</span>
+          <h2>Browse categories</h2>
+        </div>
+        <div id="category-filters" class="category-filters" aria-label="Filter games by category">
+          <button class="filter-button active" type="button" data-category="All" aria-pressed="true">All</button>
+          <button class="filter-button" type="button" data-category="Rummy" aria-pressed="false">Rummy</button>
+          <button class="filter-button" type="button" data-category="Teen Patti" aria-pressed="false">Teen Patti</button>
+          <button class="filter-button" type="button" data-category="Ludo" aria-pressed="false">Ludo</button>
+          <button class="filter-button" type="button" data-category="Slots" aria-pressed="false">Slots</button>
+          <button class="filter-button" type="button" data-category="Spin" aria-pressed="false">Spin</button>
+          <button class="filter-button" type="button" data-category="Poker" aria-pressed="false">Poker</button>
+        </div>
+      </div>
+
+      <section id="featured-section" class="game-section">
+        <div class="section-heading">
+          <div><span class="eyebrow">HAND-PICKED FOR YOU</span><h2>Featured Games</h2></div>
+        </div>
+        <div id="featured-games" class="game-grid"></div>
+      </section>
+
+      <section id="all-games" class="game-section">
+        <div class="section-heading">
+          <div><span class="eyebrow">THE FULL COLLECTION</span><h2>All Games</h2></div>
+          <span id="game-count" class="game-count"></span>
+        </div>
+        <div id="all-games-list" class="game-grid"></div>
+        <p id="empty-state" class="empty-state" hidden>No games found. Try another search or category.</p>
+        <p id="storage-error" class="notice notice-error" role="alert" hidden></p>
+      </section>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <a class="brand footer-brand" href="index.html"><span class="brand-mark">G</span>GameZone</a>
+      <p>Discover games. Play your way.</p>
+      <small>&copy; <span id="current-year"></span> GameZone. All rights reserved.</small>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+</html>

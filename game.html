@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0f172a">
+  <meta name="description" content="Game details and download on GameZone.">
+  <title>Game Details — GameZone</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-content">
+      <a class="brand" href="index.html"><span class="brand-mark">G</span>GameZone</a>
+      <a class="admin-link" href="index.html">← All games</a>
+    </div>
+  </header>
+  <main class="container detail-container">
+    <p id="detail-error" class="notice notice-error" role="alert" hidden></p>
+    <article id="game-detail" class="detail-card" hidden>
+      <div class="detail-banner-wrap">
+        <img id="detail-banner" class="detail-banner" alt="">
+        <div id="detail-banner-fallback" class="detail-banner-fallback" hidden></div>
+      </div>
+      <div class="detail-content">
+        <div class="detail-title-row">
+          <div id="detail-logo-wrap" class="game-logo detail-logo"></div>
+          <div><span id="detail-category" class="game-category"></span><h1 id="detail-name"></h1></div>
+        </div>
+        <div id="detail-stats" class="detail-stats"></div>
+        <section class="description-block">
+          <h2>About this game</h2>
+          <p id="detail-description"></p>
+        </section>
+        <a id="detail-download" class="button button-primary button-wide" target="_blank" rel="noopener noreferrer">Download Now <span aria-hidden="true">↗</span></a>
+        <p class="download-note">You will be redirected to the game's official download page.</p>
+      </div>
+    </article>
+    <div id="not-found" class="not-found" hidden>
+      <div class="not-found-icon">🎮</div>
+      <h1>Game not found.</h1>
+      <p>This game may have been removed or the link may be incorrect.</p>
+      <a class="button button-primary" href="index.html">Back to GameZone</a>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <a class="brand footer-brand" href="index.html"><span class="brand-mark">G</span>GameZone</a>
+      <small>&copy; <span id="current-year"></span> GameZone. All rights reserved.</small>
+    </div>
+  </footer>
+  <script src="js/game.js"></script>
+</body>
+</html>
